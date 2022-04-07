@@ -40,3 +40,10 @@ exports.findAll = async (req, res, next) => {
     return res.send(documents)
 }
 
+exports.findOne = async (req, res, next) => {
+    const { id } = req.params
+    const condition = {
+        _id: id && mongoose.isValidObjectId(id) ? id : null,
+    }
+}
+
