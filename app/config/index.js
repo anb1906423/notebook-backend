@@ -1,3 +1,5 @@
+// Chứa hàm liên kết với database
+
 const config = {
     app: {
         port: process.env.PORT || 4400,

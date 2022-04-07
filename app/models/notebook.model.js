@@ -1,22 +1,29 @@
 const mongoose = require('mongoose')
 
-const schema = mongoose.Schema (
+const schema = mongoose.Schema(
     {
-         title: String,
-         content: String,
-         createdAt: Date,
-         lastModified: Date,
-         favorite: Boolean,
-         words: {
-             type: DataType.Integer,
-         },
-         characters: {
-             type: DataType.Integer,
-         },
-    },
-    {
-        username: String,
-        password: String,
+        title: {
+            type: String,
+            default: '',
+            maxLength: 100,
+        },
+        content: {
+            type: String,
+            default: '',
+        },
+        createdAt: {
+            type: Date,
+            default: Date.now(),
+        },
+        words: {
+            type: String,
+            default: 0,
+        },
+        characters: {
+            type: String,
+            default: 0,
+        },
+        flag: Boolean,
     },
     {
         timestamps: true,

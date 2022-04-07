@@ -1,10 +1,15 @@
 const express = require('express')
-const notebook = require('../controllers/notebook.controller')
+const notebooks = require('../controllers/notebook.controller')
+const accounts = require('../controllers/account.controller')
 
 module.exports = (app) => {
     const router = express.Router()
 
-    // router.get('/', notebook.findAll)
+    router.post('/log-up', accounts.create)
 
-    app.use('notebook', router)
+    router.post('/', notebooks.create)
+
+    router.get('/', notebooks.findAll)
+
+    app.use('/api/notebooks', router)
 }
